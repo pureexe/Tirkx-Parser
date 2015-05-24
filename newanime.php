@@ -9,7 +9,7 @@
 		$result = explode("$",$topic);
 		if($limits==0||count($output)<$limits){
 			if(count($result)==5){
-				$result = array("aid"=>$result[1],"filename"=>$result[2],"md5"=>$result[0],"lang"=>$result[3],"streaming"=>$result[4]);
+				$result = array("aid"=>intval($result[1]),"filename"=>$result[2],"md5"=>$result[0],"lang"=>$result[3],"streaming"=>($result[4]=="true")?true:false);
 				array_push($output,$result);
 			}
 		}else{
